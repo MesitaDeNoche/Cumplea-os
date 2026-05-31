@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Cumpleaños, Mi Amor 💜</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ============================================================
+         PANTALLA DE CUENTA REGRESIVA (se oculta el día del cumpleaños)
+    ============================================================ -->
+    <div class="lockscreen" id="lockscreen">
+
+        <!-- Partículas propias del lockscreen -->
+        <div class="lockscreen__particles" id="lockParticles"></div>
+
+        <div class="lockscreen__content">
+            <p class="lockscreen__pre">Algo especial se acerca…</p>
+            <h1 class="lockscreen__title">💜</h1>
+
+            <div class="lockscreen__countdown">
+                <div class="lockscreen__unit">
+                    <span class="lockscreen__num" id="lsDays">0</span>
+                    <span class="lockscreen__lbl">días</span>
+                </div>
+                <div class="lockscreen__sep">:</div>
+                <div class="lockscreen__unit">
+                    <span class="lockscreen__num" id="lsHours">00</span>
+                    <span class="lockscreen__lbl">horas</span>
+                </div>
+                <div class="lockscreen__sep">:</div>
+                <div class="lockscreen__unit">
+                    <span class="lockscreen__num" id="lsMinutes">00</span>
+                    <span class="lockscreen__lbl">minutos</span>
+                </div>
+                <div class="lockscreen__sep">:</div>
+                <div class="lockscreen__unit">
+                    <span class="lockscreen__num" id="lsSeconds">00</span>
+                    <span class="lockscreen__lbl">segundos</span>
+                </div>
+            </div>
+
+            <p class="lockscreen__hint">
+                Vuelve el <strong>7 de junio</strong> para ver tu sorpresa 💜
+            </p>
+        </div>
+    </div>
+
+    <!-- ✨ Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- ============================================================
+         SECCIÓN HERO — Texto principal
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="hero__content">
+            <p class="hero__subtitle">Hoy, en tu día especial…</p>
+            <h1 class="hero__title">Feliz Cumpleaños,<br /><span class="hero__name">Mi Amor</span></h1>
+
+            <div class="hero__letter">
+                <p>
+                    Hay personas que llegan a tu vida y la cambian para siempre,
+                    sin avisar, sin pedir permiso, simplemente aparecen y de repente
+                    el mundo tiene más color, más sentido, más calor.
+                </p>
+                <p>
+                    Tú eres esa persona para mí.
+                </p>
+                <p>
+                    Cada día a tu lado es un regalo que no merezco pero que cuido
+                    con todo lo que tengo. Tu risa es mi canción favorita,
+                    tu mirada es el lugar donde más quiero estar,
+                    y tu amor es la cosa más bonita que me ha pasado.
+                </p>
+                <p>
+                    Hoy celebro el día en que llegaste al mundo,
+                    porque sin ese día, yo no tendría el mío.
+                </p>
+                <p class="hero__letter-signature">Con todo mi amor, siempre. 💜</p>
+            </div>
+
+            <a href="#carousel-section" class="hero__cta">Ver nuestros momentos ↓</a>
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CARRUSEL — Nuestros momentos
+    ============================================================ -->
+    <section class="carousel-section" id="carousel-section">
+        <div class="carousel-section__header">
+            <h2>Nuestros Momentos</h2>
+            <p>Cada foto guarda una historia que atesoro en el corazón</p>
+        </div>
+
+        <div class="carousel-wrapper">
+            <!-- Botón anterior -->
+            <button class="carousel-btn carousel-btn--prev" id="prevBtn" aria-label="Foto anterior">&#8249;</button>
+
+            <!-- Pista del carrusel -->
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <!-- ── SLIDE 1 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto19.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 1" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Nuestro primer día</span>
+                                <p class="carousel-card__desc">
+                                    El día que todo empezó. Recuerdo que estaba nervioso
+                                    porque conocerias a mis papás, tambien recuerdo esa sonrisa
+                                    tuya, hermosa como simepre.
+                                    Desde ese día sabia lo especial que serias para mi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 2 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto18.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 2" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Un momento especial</span>
+                                <p class="carousel-card__desc">
+                                    Esta foto es considerada una de las mas importantes para los dos
+                                    eso es porque es la foto de nuestro primer beso como pareja.
+                                    Y tambien es una foto muy hermosa por el Beily peludo en medio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 3 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto20.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 3" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Un día para recordar</span>
+                                <p class="carousel-card__desc">
+                                    Este fue un día muy especial ya fue nuestro primer 31 como pareja,
+                                    ese día me hiciste más feliz de lo que te puedes imaginar.
+                                    Y todavia lo haces muy seguido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 4 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto17.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 4" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Siempre juntos</span>
+                                <p class="carousel-card__desc">
+                                    Esta foto me recuerda que no importa el día, el
+                                    momento, o lo que pase, siempre y cuando estemos juntos como
+                                    este día en el que nos mojamos pero la pasamos bien como pareja.
+                                    Pero estabamos juntos que fue lo más importante para mi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 5 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto16.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 5" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Un día para recordar</span>
+                                <p class="carousel-card__desc">
+                                    Otro de los días mas especiales que hemos tenido como pareja
+                                    nuestro segundo año juntos después de todo un año.
+                                    Fuí muy feliz por poder compartir contigo todo el año.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 6 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto15.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 6" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Otro dia para recordar</span>
+                                <p class="carousel-card__desc">
+                                    Este es otro de los días importantes para mi,
+                                    otro día de diciembre que vivimos juntos. Otra vez fui
+                                    muy feliz contigo a tu lado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 8 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto13.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 8" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Tu sonrisa</span>
+                                <p class="carousel-card__desc">
+                                    Tu sonrisa en esta foto lo dice todo.
+                                    Es la imagen que más me gusta guardar en el corazón.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 7 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto14.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 7" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Dia importante para mi</span>
+                                <p class="carousel-card__desc">
+                                    Este es uno de los días mas importantes para mi, el día 
+                                    de mi cumpleaños que me acompañaste y me hiciste muy feliz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ── SLIDE 9 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto12.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 9" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Tu día importante</span>
+                                <p class="carousel-card__desc">
+                                    Este es un recuerdo muy importante para los dos, el día de tu cumpleaños,
+                                    un día que pasamos juntos y celebramos tu cumpleaños como pareja.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 10 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto11.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 10" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Recuerdo memorables</span>
+                                <p class="carousel-card__desc">
+                                    Este es uno de los recuedos mamorables que tengo contigo.
+                                    Tus grados, ese día te veias demasiado hermosa, como siempre te ves.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 11 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto10.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 11" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Un día perfecto</span>
+                                <p class="carousel-card__desc">
+                                    Este fue un día perfecto a tu lado, celebramos tus grados
+                                    y fuimos muy felices todos, tu, yo y tu familia.
+                                    Te amo demasiado y sigo orgulloso por ese logro que conseguiste.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 12 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto7.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 12" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Unas de mis fotos favoritas</span>
+                                <p class="carousel-card__desc">
+                                    Claro tampoco puedo olvidarme de tu familia, me siento
+                                    muy feliz de coincidir contigo y poder compartir espacios y tiempos
+                                    con tu familia que tanto me agrada y quiero.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 13 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto5.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 13" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Recuerdos que guardo</span>
+                                <p class="carousel-card__desc">
+                                    Hay recuerdos que no necesitan foto para quedarse,
+                                    como este día tan genial que vimos una pelicula de tu serie de anime favorita
+                                    y que disfrutamos tanto, por eso me alegra tener esta para volver a vivirlo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 14 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto3.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 14" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Tú </span>
+                                <p class="carousel-card__desc">
+                                    Tú, simplemente tú, con tu sonrisa, tu carisma, tu belleza
+                                    y todo lo eres y te define en una sola foto, basicamente tú.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 15 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto2.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 15" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 Momentos de felicidad</span>
+                                <p class="carousel-card__desc">
+                                    La felicidad no es un lugar al que se llega,
+                                    es esto: estar contigo en momentos como este, en celebraciones
+                                    importantes, como en nuestro aniversario, soy feliz de tenerte a mi lado
+                                    un año más.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 16 ── -->
+                    <div class="carousel-slide">
+                        <div class="carousel-card">
+                            <div class="carousel-card__img-wrapper">
+                                <img src="/images/foto1.jpg"
+                                     onerror="this.src='/images/placeholder.svg'"
+                                     alt="Foto 16" />
+                                <button class="carousel-card__fullscreen-btn" aria-label="Ver en pantalla completa">&#x26F6;</button>
+                            </div>
+                            <div class="carousel-card__body">
+                                <span class="carousel-card__date">📅 La persona que más amo</span>
+                                <p class="carousel-card__desc">
+                                    Por ultimo, esta está foto, donde se ve la persona más maravillosa de este
+                                    mundo, la persona que más amo, que deseo tener siempre todos los días de mi
+                                    vida, mi persona favorita en todo el universo.
+
+                                    TE AMO DEMASIADO CIELO, FELIZ CUMPLEAÑOS 💜
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /carousel-track -->
+            </div><!-- /carousel-track-container -->
+
+            <!-- Botón siguiente -->
+            <button class="carousel-btn carousel-btn--next" id="nextBtn" aria-label="Foto siguiente">&#8250;</button>
+        </div>
+
+        <!-- Indicadores (dots) -->
+        <div class="carousel-dots" id="carouselDots" aria-label="Indicadores de diapositiva"></div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN NUESTRA CANCIÓN
+    ============================================================ -->
+    <section class="song-section" id="song-section">
+        <div class="song-section__content">
+            <div class="song-section__header">
+                <span class="song-section__label">🎵 Nuestra canción</span>
+                <h2>La canción que nos define</h2>
+                <p>
+                    Cada vez que la escucho pienso en ti.<br />
+                    Ponla, cierra los ojos, y recuerda que te quiero.
+                </p>
+            </div>
+
+            <div class="song-section__player">
+                <!-- Nota de vinilo decorativa -->
+                <div class="song-section__vinyl" aria-hidden="true">
+                    <div class="vinyl__disc">
+                        <div class="vinyl__center">💜</div>
+                    </div>
+                </div>
+
+                <!-- Embed oficial de Spotify -->
+                <div class="song-section__embed">
+                    <iframe
+                        src="https://open.spotify.com/embed/track/4yNk9iz9WVJikRFle3XEvn?utm_source=generator&theme=0"
+                        width="100%"
+                        height="152"
+                        frameborder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                        title="Nuestra canción en Spotify">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN COSAS QUE ME RECUERDAN A TI
+    ============================================================ -->
+    <section class="reminders-section" id="reminders-section">
+        <div class="reminders-section__content">
+            <div class="reminders-section__header">
+                <span class="reminders-section__label">✨ Pequeñas cosas</span>
+                <h2>Cosas que me recuerdan a ti</h2>
+                <p>No hace falta que estés presente para sentirte cerca</p>
+            </div>
+
+            <div class="reminders-grid">
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img reminder-card__icon--cro">
+                        <img src="/images/cro-logo.png" alt="Logo de Cro" class="reminder-card__logo reminder-card__logo--cro"/>
+                    </div>
+                    <h3>CRO</h3>
+                    <p>Cada vez que veo este logo o escucho una de sus canciones pienso en ti, porque se lo mucho que te gusta.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <img src="/images/bts-logo.png" alt="Logo de BTS" class="reminder-card__logo"/>
+                    </div>
+                    <h3>BTS</h3>
+                    <p>Cada canción, cada video, cada detalle de ellos me recuerda a ti y a todo lo que los amas.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <img src="/images/golden-logo.jpg" alt="Logo de golden" class="reminder-card__logo"/>
+                    </div>
+                    <h3>Nuestra canción</h3>
+                    <p>Cuando suena en cualquier lugar, el mundo se detiene un segundo y solo existes tú.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon">💜</div>
+                    <h3>El color morado</h3>
+                    <p>Desde que te conozco, el morado dejó de ser un color y se convirtió en ti.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <img src="/images/snoopy-logo.png" alt="Logo de Snoopy" class="reminder-card__logo"/>
+                    </div>
+                    <h3>Snoopy</h3>
+                    <p>Cada vez que veo a un Snoopy eres lo primero que se me viene a la mente, sin importar que Snoopy sea siempre te veo a ti.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <svg class="reminder-card__logo reminder-card__svg-tulip" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <!-- Tallo -->
+                            <path d="M50 130 Q50 85 50 70" stroke="#a855f7" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <!-- Hoja izquierda -->
+                            <path d="M50 95 Q30 80 28 60 Q42 72 50 85" fill="#c084fc" opacity="0.85"/>
+                            <!-- Hoja derecha -->
+                            <path d="M50 95 Q70 80 72 60 Q58 72 50 85" fill="#c084fc" opacity="0.85"/>
+                            <!-- Pétalo izquierdo exterior -->
+                            <path d="M50 70 Q22 60 20 30 Q35 45 50 55" fill="#e9d5ff"/>
+                            <!-- Pétalo derecho exterior -->
+                            <path d="M50 70 Q78 60 80 30 Q65 45 50 55" fill="#e9d5ff"/>
+                            <!-- Pétalo izquierdo interior -->
+                            <path d="M50 68 Q30 55 32 20 Q44 38 50 52" fill="#c084fc"/>
+                            <!-- Pétalo derecho interior -->
+                            <path d="M50 68 Q70 55 68 20 Q56 38 50 52" fill="#c084fc"/>
+                            <!-- Pétalo central -->
+                            <path d="M50 68 Q40 45 50 10 Q60 45 50 68" fill="#a855f7"/>
+                        </svg>
+                    </div>
+                    <h3>Los tulipanes</h3>
+                    <p>Cada vez que veo un tulipán pienso en ti, en tu delicadeza y en lo bonita que eres.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <img src="/images/zenitsu-logo.jpg" alt="Logo de zenitsu" class="reminder-card__logo"/>
+                    </div>
+                    <h3>Zenitsu</h3>
+                    <p>Cada vez que veo este personaje te recuerdo, porque te parecer mucho a el y ademas es tu favorito.</p>
+                </div>
+
+                <div class="reminder-card">
+                    <div class="reminder-card__icon reminder-card__icon--img">
+                        <svg class="reminder-card__logo reminder-card__svg-lasagna" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <!-- Fuente / bandeja -->
+                            <rect x="8" y="70" width="104" height="14" rx="5" fill="#7c3aed"/>
+                            <rect x="4" y="74" width="112" height="6" rx="3" fill="#6d28d9"/>
+
+                            <!-- Capa base (pasta) -->
+                            <rect x="14" y="58" width="92" height="10" rx="3" fill="#e9d5ff"/>
+                            <!-- Capa relleno 1 (salsa) -->
+                            <rect x="14" y="50" width="92" height="9" rx="2" fill="#c084fc"/>
+                            <!-- Ondas de salsa -->
+                            <path d="M14 54 Q28 50 42 54 Q56 58 70 54 Q84 50 106 54" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+                            <!-- Capa pasta 2 -->
+                            <rect x="14" y="41" width="92" height="10" rx="3" fill="#e9d5ff"/>
+                            <!-- Capa relleno 2 -->
+                            <rect x="14" y="33" width="92" height="9" rx="2" fill="#c084fc"/>
+                            <path d="M14 37 Q28 33 42 37 Q56 41 70 37 Q84 33 106 37" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+                            <!-- Capa pasta superior -->
+                            <rect x="14" y="24" width="92" height="10" rx="3" fill="#f3e8ff"/>
+                            <!-- Queso gratinado -->
+                            <rect x="14" y="15" width="92" height="10" rx="4" fill="#fde68a"/>
+                            <!-- Burbujas de queso -->
+                            <ellipse cx="35" cy="18" rx="8" ry="5" fill="#fbbf24" opacity="0.7"/>
+                            <ellipse cx="60" cy="17" rx="10" ry="5" fill="#fbbf24" opacity="0.6"/>
+                            <ellipse cx="85" cy="19" rx="7" ry="4" fill="#fbbf24" opacity="0.7"/>
+                            <!-- Toque dorado encima -->
+                            <path d="M20 15 Q40 10 60 13 Q80 16 100 12" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>La lasaña</h3>
+                    <p>Honestamente, muchas comidas ricas me recuerdan a ti pero especialmente la lasaña.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CONSTELACIÓN — Puzzle
+    ============================================================ -->
+    <section class="constellation-section" id="constellation-section">
+
+        <!-- Fondo de estrellas decorativas -->
+        <canvas id="starCanvas" class="constellation-section__starfield" aria-hidden="true"></canvas>
+
+        <div class="constellation-section__content">
+            <div class="constellation-section__header">
+                <span class="constellation-section__label">🌌 El universo nos unió</span>
+                <h2>Nuestra Constelación</h2>
+                <p>Conecta las estrellas en orden para descubrir un mensaje</p>
+            </div>
+
+            <!-- Área del puzzle -->
+            <div class="constellation-puzzle" id="constellationPuzzle">
+                <svg class="constellation-svg" id="constellationSvg"
+                     viewBox="0 0 400 340"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-label="Puzzle de constelación">
+
+                    <!-- Líneas que se dibujan al conectar (ocultas al inicio) -->
+                    <g id="constLines" class="const-lines"></g>
+
+                    <!-- Estrellas del puzzle — forman un corazón -->
+                    <!-- Orden de conexión: 1→2→3→4→5→6→7→8→9→10→1 -->
+                    <g id="constStars">
+                        <!-- 1 -->
+                        <g class="const-star" data-index="1" data-x="200" data-y="60">
+                            <circle cx="200" cy="60" r="14" class="const-star__hit"/>
+                            <circle cx="200" cy="60" r="5"  class="const-star__glow"/>
+                            <circle cx="200" cy="60" r="3"  class="const-star__core"/>
+                            <text x="200" y="44" class="const-star__num">1</text>
+                        </g>
+                        <!-- 2 -->
+                        <g class="const-star" data-index="2" data-x="270" data-y="90">
+                            <circle cx="270" cy="90" r="14" class="const-star__hit"/>
+                            <circle cx="270" cy="90" r="5"  class="const-star__glow"/>
+                            <circle cx="270" cy="90" r="3"  class="const-star__core"/>
+                            <text x="270" y="74" class="const-star__num">2</text>
+                        </g>
+                        <!-- 3 -->
+                        <g class="const-star" data-index="3" data-x="320" data-y="155">
+                            <circle cx="320" cy="155" r="14" class="const-star__hit"/>
+                            <circle cx="320" cy="155" r="5"  class="const-star__glow"/>
+                            <circle cx="320" cy="155" r="3"  class="const-star__core"/>
+                            <text x="320" y="139" class="const-star__num">3</text>
+                        </g>
+                        <!-- 4 -->
+                        <g class="const-star" data-index="4" data-x="280" data-y="220">
+                            <circle cx="280" cy="220" r="14" class="const-star__hit"/>
+                            <circle cx="280" cy="220" r="5"  class="const-star__glow"/>
+                            <circle cx="280" cy="220" r="3"  class="const-star__core"/>
+                            <text x="280" y="204" class="const-star__num">4</text>
+                        </g>
+                        <!-- 5 -->
+                        <g class="const-star" data-index="5" data-x="200" data-y="285">
+                            <circle cx="200" cy="285" r="14" class="const-star__hit"/>
+                            <circle cx="200" cy="285" r="5"  class="const-star__glow"/>
+                            <circle cx="200" cy="285" r="3"  class="const-star__core"/>
+                            <text x="200" y="269" class="const-star__num">5</text>
+                        </g>
+                        <!-- 6 -->
+                        <g class="const-star" data-index="6" data-x="120" data-y="220">
+                            <circle cx="120" cy="220" r="14" class="const-star__hit"/>
+                            <circle cx="120" cy="220" r="5"  class="const-star__glow"/>
+                            <circle cx="120" cy="220" r="3"  class="const-star__core"/>
+                            <text x="120" y="204" class="const-star__num">6</text>
+                        </g>
+                        <!-- 7 -->
+                        <g class="const-star" data-index="7" data-x="80" data-y="155">
+                            <circle cx="80" cy="155" r="14" class="const-star__hit"/>
+                            <circle cx="80" cy="155" r="5"  class="const-star__glow"/>
+                            <circle cx="80" cy="155" r="3"  class="const-star__core"/>
+                            <text x="80" y="139" class="const-star__num">7</text>
+                        </g>
+                        <!-- 8 -->
+                        <g class="const-star" data-index="8" data-x="130" data-y="90">
+                            <circle cx="130" cy="90" r="14" class="const-star__hit"/>
+                            <circle cx="130" cy="90" r="5"  class="const-star__glow"/>
+                            <circle cx="130" cy="90" r="3"  class="const-star__core"/>
+                            <text x="130" y="74" class="const-star__num">8</text>
+                        </g>
+                    </g>
+                </svg>
+
+                <!-- Indicador de progreso -->
+                <div class="constellation-progress" id="constProgress">
+                    <span id="constProgressText">Toca la estrella <strong>1</strong></span>
+                </div>
+            </div>
+
+            <!-- Botón reset -->
+            <button class="constellation-reset" id="constReset" aria-label="Reiniciar constelación">
+                ↺ Reiniciar
+            </button>
+        </div>
+
+        <!-- Modal del mensaje final -->
+        <div class="const-message" id="constMessage" role="dialog" aria-modal="true">
+            <div class="const-message__inner">
+                <div class="const-message__stars" aria-hidden="true">✨ 💜 ✨</div>
+                <h3>Lo encontraste</h3>
+                <p>
+                    En todo el universo, con sus millones de estrellas
+                    y galaxias infinitas, la probabilidad de que
+                    dos personas se encuentren es casi imposible.
+                </p>
+                <p>
+                    Y aun así, aquí estamos.
+                </p>
+                <p>
+                    Eso no es suerte. Eso es que el universo
+                    entero conspiró para que yo te encontrara a ti.
+                </p>
+                <p class="const-message__signature">
+                    Y lo volvería a hacer mil veces más. 💜
+                </p>
+                <button class="const-message__close" id="constMsgClose">
+                    Cerrar ✕
+                </button>
+            </div>
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CONTADOR DE DÍAS
+    ============================================================ -->
+    <section class="counter-section" id="counter-section">
+        <div class="counter-section__content">
+
+            <div class="counter-section__header">
+                <span class="counter-section__label">💜 Desde aquel día</span>
+                <h2>Llevamos juntos</h2>
+            </div>
+
+            <!-- Número grande de días -->
+            <div class="counter-section__days-wrap">
+                <span class="counter-section__days" id="dayCount">0</span>
+                <span class="counter-section__days-label">días</span>
+            </div>
+
+            <!-- Desglose en años, meses, días -->
+            <div class="counter-section__breakdown">
+                <div class="counter-breakdown__item">
+                    <span class="counter-breakdown__num" id="yearsCount">0</span>
+                    <span class="counter-breakdown__lbl">años</span>
+                </div>
+                <div class="counter-breakdown__sep">·</div>
+                <div class="counter-breakdown__item">
+                    <span class="counter-breakdown__num" id="monthsCount">0</span>
+                    <span class="counter-breakdown__lbl">meses</span>
+                </div>
+                <div class="counter-breakdown__sep">·</div>
+                <div class="counter-breakdown__item">
+                    <span class="counter-breakdown__num" id="daysCount">0</span>
+                    <span class="counter-breakdown__lbl">días</span>
+                </div>
+            </div>
+
+            <!-- Fecha de inicio -->
+            <p class="counter-section__since">
+                Desde el <strong>7 de diciembre de 2022</strong>
+                soy el hombre más feliz del mundo ✨
+            </p>
+
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CIERRE — Mensaje final
+    ============================================================ -->
+    <section class="closing">
+        <div class="closing__content">
+            <div class="closing__heart">💜</div>
+            <h2>Feliz Cumpleaños</h2>
+            <p>
+                Que este año que comienza esté lleno de todo lo que mereces:
+                alegría, paz, amor y todos tus sueños cumplidos.
+                Yo estaré aquí, a tu lado, en cada paso.
+            </p>
+            <p class="closing__forever">Para siempre tuyo 💜</p>
+        </div>
+
+        <!-- Corazones flotantes decorativos -->
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💜</span><span>🤍</span><span>💜</span>
+            <span>✨</span><span>💜</span><span>🤍</span>
+            <span>💜</span><span>✨</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MODAL PANTALLA COMPLETA
+    ============================================================ -->
+    <div class="photo-modal" id="photoModal" role="dialog" aria-modal="true" aria-label="Foto en pantalla completa">
+        <div class="photo-modal__inner">
+            <!-- Cerrar -->
+            <button class="photo-modal__close" id="modalClose" aria-label="Cerrar">&#x2715;</button>
+
+            <!-- Nav anterior -->
+            <button class="photo-modal__nav photo-modal__nav--prev" id="modalPrev" aria-label="Foto anterior">&#8249;</button>
+
+            <!-- Imagen -->
+            <div class="photo-modal__img-wrap">
+                <img id="modalImg" src="" alt="" />
+            </div>
+
+            <!-- Descripción -->
+            <div class="photo-modal__caption">
+                <span class="carousel-card__date" id="modalDate"></span>
+                <p id="modalDesc"></p>
+            </div>
+
+            <!-- Contador -->
+            <span class="photo-modal__counter" id="modalCounter"></span>
+
+            <!-- Nav siguiente -->
+            <button class="photo-modal__nav photo-modal__nav--next" id="modalNext" aria-label="Foto siguiente">&#8250;</button>
+        </div>
+    </div>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
+
+
