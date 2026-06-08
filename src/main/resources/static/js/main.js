@@ -93,16 +93,16 @@
         }
     }
 
-    /* Botón manual para ir a la página */
-    const unlockBtn = document.getElementById('unlockBtn');
-    if (unlockBtn) {
-        unlockBtn.addEventListener('click', unlock);
-    }
-
     /* Si ya es el cumpleaños, desbloquear de inmediato sin mostrar lockscreen */
     if (isBirthday()) {
         unlock();
         return;
+    }
+
+    /* Botón manual para ir a la página (solo visible cuando no es cumpleaños) */
+    const unlockBtn = document.getElementById('unlockBtn');
+    if (unlockBtn) {
+        unlockBtn.addEventListener('click', unlock);
     }
 
     /* Bloquear scroll mientras cuenta regresiva */
