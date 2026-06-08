@@ -5,49 +5,34 @@
     const lockscreen = document.getElementById('lockscreen');
     if (!lockscreen) return;
 
-    /* Fecha objetivo: 7 de junio del año actual (o siguiente si ya pasó) */
-    function getBirthday() {
-        const now  = new Date();
-        let target = new Date(now.getFullYear(), 5, 7, 0, 0, 0); // mes 5 = junio
-        if (now >= target) {
-            /* Si ya pasó este año, apuntar al siguiente */
-            target = new Date(now.getFullYear() + 1, 5, 7, 0, 0, 0);
-        }
-        return target;
-    }
+    let timer = null; // declarado aquí para que unlock() pueda referenciarlo siempre
 
     function isBirthday() {
         const now = new Date();
         return now.getMonth() === 5 && now.getDate() === 7;
     }
 
+    function getBirthday() {
+        const now  = new Date();
+        let target = new Date(now.getFullYear(), 5, 7, 0, 0, 0);
+        // Solo avanzar al año siguiente si ya pasó el día (no si ES el día)
+        if (!isBirthday() && now >= target) {
+            target = new Date(now.getFullYear() + 1, 5, 7, 0, 0, 0);
+        }
+        return target;
+    }
+
     function pad(n) { return String(n).padStart(2, '0'); }
 
-    function updateCountdown() {
-        const now = new Date();
-
-        if (isBirthday()) {
-            unlock();
-            return;
-        }
-
-        const target = getBirthday();
-        const diff   = target - now;
-
-        if (diff <= 0) {
-            unlock();
-            return;
-        }
-
-        const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById('lsDays').textContent    = days;
-        document.getElementById('lsHours').textContent   = pad(hours);
-        document.getElementById('lsMinutes').textContent = pad(minutes);
-        document.getElementById('lsSeconds').textContent = pad(seconds);
+    function unlock() {
+        if (timer) clearInterval(timer);
+        spawnHearts();
+        document.body.classList.remove('locked');
+        lockscreen.classList.add('unlocked');
+        setTimeout(() => {
+            const ev = new Event('DOMContentLoaded');
+            document.dispatchEvent(ev);
+        }, 900);
     }
 
     function spawnHearts() {
@@ -66,16 +51,24 @@
         }
     }
 
-    function unlock() {
-        clearInterval(timer);
-        spawnHearts();
-        document.body.classList.remove('locked');
-        lockscreen.classList.add('unlocked');
-        /* Iniciar partículas del contenido principal */
-        setTimeout(() => {
-            const ev = new Event('DOMContentLoaded');
-            document.dispatchEvent(ev);
-        }, 900);
+    function updateCountdown() {
+        if (isBirthday()) { unlock(); return; }
+
+        const now    = new Date();
+        const target = getBirthday();
+        const diff   = target - now;
+
+        if (diff <= 0) { unlock(); return; }
+
+        const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('lsDays').textContent    = days;
+        document.getElementById('lsHours').textContent   = pad(hours);
+        document.getElementById('lsMinutes').textContent = pad(minutes);
+        document.getElementById('lsSeconds').textContent = pad(seconds);
     }
 
     /* Partículas del lockscreen */
@@ -100,7 +93,13 @@
         }
     }
 
-    /* Si es el cumpleaños, desbloquear de inmediato */
+    /* Botón manual para ir a la página */
+    const unlockBtn = document.getElementById('unlockBtn');
+    if (unlockBtn) {
+        unlockBtn.addEventListener('click', unlock);
+    }
+
+    /* Si ya es el cumpleaños, desbloquear de inmediato sin mostrar lockscreen */
     if (isBirthday()) {
         unlock();
         return;
@@ -109,14 +108,8 @@
     /* Bloquear scroll mientras cuenta regresiva */
     document.body.classList.add('locked');
 
-    /* Botón manual para ir a la página */
-    const unlockBtn = document.getElementById('unlockBtn');
-    if (unlockBtn) {
-        unlockBtn.addEventListener('click', unlock);
-    }
-
     updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
+    timer = setInterval(updateCountdown, 1000);
 })();
 
 /* ============================================================
