@@ -24,11 +24,17 @@
     function pad(n) { return String(n).padStart(2, '0'); }
 
     function updateCountdown() {
-        const now    = new Date();
+        const now = new Date();
+
+        if (isBirthday()) {
+            unlock();
+            return;
+        }
+
         const target = getBirthday();
         const diff   = target - now;
 
-        if (diff <= 0 || isBirthday()) {
+        if (diff <= 0) {
             unlock();
             return;
         }
@@ -102,6 +108,12 @@
 
     /* Bloquear scroll mientras cuenta regresiva */
     document.body.classList.add('locked');
+
+    /* Botón manual para ir a la página */
+    const unlockBtn = document.getElementById('unlockBtn');
+    if (unlockBtn) {
+        unlockBtn.addEventListener('click', unlock);
+    }
 
     updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
