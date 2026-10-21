@@ -1,33 +1,67 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# Build outputs
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .project
-.settings
+.classpath
+.settings/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# Temporary files
+*.tmp
+*.temp
+.cache/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# PM2
+.pm2/
 
-### VS Code ###
-.vscode/
+# Vercel
+.vercel
+
+# Turbo
+.turbo
+
+# Legacy (Spring Boot)
+legacy/target/
+legacy/.mvn/wrapper/maven-wrapper.jar
+legacy/HELP.md
