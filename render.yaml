@@ -10,12 +10,13 @@ services:
     dockerContext: ./legacy
     envVars:
       - key: PORT
-        value: 8080
+        value: 10000
       - key: JAVA_TOOL_OPTIONS
         value: -Xmx512m -Xms256m
       - key: SPRING_PROFILES_ACTIVE
         value: prod
-    healthCheckPath: /actuator/health
+    # Health check deshabilitado temporalmente
+    # healthCheckPath: /actuator/health
     autoDeploy: true
     
     # Configuración de recursos
