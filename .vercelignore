@@ -1,0 +1,20 @@
+# Ignore monorepo files when deploying frontend
+pnpm-workspace.yaml
+pnpm-lock.yaml
+package.json
+
+# Ignore other apps
+apps/backend
+
+# Ignore docs and legacy
+docs/
+legacy/
+skills/
+
+# Ignore kiro files
+.kiro/
+
+# Common ignores
+node_modules/
+.git/
+.github/
