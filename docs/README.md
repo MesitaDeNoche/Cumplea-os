@@ -48,10 +48,15 @@ Documento maestro que describe:
 
 **specs/** (Specification-Driven Development)
 Especificaciones por feature:
-- `SPEC-001-contador-dias.md`
-- `SPEC-002-carrusel-fotos.md`
-- `SPEC-003-constelacion.md`
-- etc.
+- `SPEC-000-aplicacion-general-auth.md` - Sistema de autenticación (10 requirements)
+- `SPEC-001-dashboard-principal.md` - Dashboard con navegación (7 requirements)
+- `SPEC-002-boveda-recuerdos.md` - Timeline interactivo (10 requirements)
+- `SPEC-003-playlist-visual.md` - Reproductor de mensajes (15 requirements)
+- `SPEC-004-escape-room-romantico.md` - Minijuego de acertijos (10 requirements)
+- `SPEC-005-dashboard-animo.md` - Selector de estados de ánimo (12 requirements)
+- `SPEC-006-botiquin-emergencia.md` - Botón SOS + apoyo (20 requirements)
+
+[Ver índice completo de specs →](arquitectura/specs/README.md)
 
 **adr/** (Architectural Decision Records)
 Registros de decisiones:

@@ -1,0 +1,12 @@
+# Ignore root workspace files
+../../pnpm-workspace.yaml
+../../pnpm-lock.yaml
+
+# Ignore other apps
+../backend
+
+# Ignore unnecessary files
+node_modules
+.next
+.env*.local
+!.env.local.example
