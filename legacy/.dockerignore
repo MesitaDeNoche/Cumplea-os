@@ -1,7 +1,20 @@
-target/
-*.iml
-.idea/
-.vscode/
+# Ignore archivos de Node.js (el backend es Java)
+node_modules/
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
+apps/
+
+# Ignore archivos de desarrollo
 .git/
-.gitignore
+.github/
+.vscode/
+.idea/
 *.md
+!README.md
+
+# Ignore archivos de build de Maven (se regeneran)
+target/
+*.log

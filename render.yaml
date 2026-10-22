@@ -5,15 +5,14 @@ services:
   # Backend Java - Spring Boot
   - type: web
     name: cumple-backend
-    runtime: java
-    buildCommand: cd legacy && ./mvnw clean install -DskipTests
-    startCommand: cd legacy && java -jar target/cumple-0.0.1-SNAPSHOT.jar
     env: docker
+    dockerfilePath: ./legacy/Dockerfile
+    dockerContext: ./legacy
     envVars:
-      - key: JAVA_TOOL_OPTIONS
-        value: -Xmx512m -Xms256m
       - key: PORT
         value: 8080
+      - key: JAVA_TOOL_OPTIONS
+        value: -Xmx512m -Xms256m
       - key: SPRING_PROFILES_ACTIVE
         value: prod
     healthCheckPath: /actuator/health
@@ -22,6 +21,3 @@ services:
     # Configuración de recursos
     plan: free
     region: oregon
-    
-    # Variables de entorno adicionales
-    # Agregar desde Render Dashboard si son secretas

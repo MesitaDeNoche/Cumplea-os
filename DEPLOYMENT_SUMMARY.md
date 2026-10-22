@@ -176,6 +176,22 @@ curl https://cumple-backend.onrender.com
 
 ## 🐛 Troubleshooting
 
+### Error: "sh: 1: next: not found" (Render)
+
+**Síntoma**: Render intenta usar Node.js/yarn/pnpm en lugar de Java
+
+**Causa**: Render detectó `package.json` en la raíz y asumió que es Node.js
+
+**Solución**:
+1. Verifica que `render.yaml` tenga `env: docker`
+2. Verifica que `dockerfilePath: ./legacy/Dockerfile` esté correcto
+3. Commit y push
+4. Redeploy en Render
+
+**Documentación completa**: `RENDER_TROUBLESHOOTING.md`
+
+---
+
 ### Error: ERR_PNPM_UNSUPPORTED_ENGINE (Vercel)
 
 **Síntoma**: Build falla con error de pnpm

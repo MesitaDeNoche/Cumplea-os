@@ -26,18 +26,23 @@
 
 ## 🔧 Configuración Automática (Opción A - Recomendada)
 
-### 1. Usar render.yaml
+### 1. Usar render.yaml + Dockerfile
 
-Ya se creó el archivo `render.yaml` en la raíz del proyecto con la configuración:
+Ya se crearon los archivos necesarios:
 
+**`render.yaml`** (raíz):
 ```yaml
 services:
   - type: web
     name: cumple-backend
-    runtime: java
-    buildCommand: cd legacy && ./mvnw clean install -DskipTests
-    startCommand: cd legacy && java -jar target/cumple-0.0.1-SNAPSHOT.jar
+    env: docker
+    dockerfilePath: ./legacy/Dockerfile
+    dockerContext: ./legacy
 ```
+
+**`legacy/Dockerfile`** (multi-stage build):
+- Stage 1: Compila con Maven
+- Stage 2: Runtime ligero solo con Java
 
 ### 2. Deploy desde Dashboard
 
@@ -50,16 +55,16 @@ services:
 
 **✅ Listo**. Render hará:
 - Clone del repo
-- `cd legacy && ./mvnw clean install`
-- Crear imagen Docker
-- Ejecutar `java -jar target/cumple-0.0.1-SNAPSHOT.jar`
+- Usa `legacy/Dockerfile`
+- Build multi-stage (Maven + JRE)
+- Deploy con variables de entorno
 - Asignar URL: `https://cumple-backend.onrender.com`
 
 ---
 
 ## 🔧 Configuración Manual (Opción B)
 
-Si prefieres configurar manualmente:
+Si prefieres configurar manualmente sin Blueprint:
 
 ### 1. Crear Web Service
 
@@ -70,16 +75,15 @@ Si prefieres configurar manualmente:
 ```
 Repository:     MesitaDeNoche/Cumplea-os
 Branch:         main
-Root Directory: legacy
 ```
 
-### 3. Configurar Build
+### 3. Configurar Build (Docker)
 
 ```
-Name:            cumple-backend
-Runtime:         Docker (o Java si está disponible)
-Build Command:   ./mvnw clean install -DskipTests
-Start Command:   java -jar target/cumple-0.0.1-SNAPSHOT.jar
+Name:               cumple-backend
+Environment:        Docker
+Dockerfile Path:    ./legacy/Dockerfile
+Docker Context:     ./legacy
 ```
 
 ### 4. Configurar Variables de Entorno

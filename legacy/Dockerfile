@@ -1,24 +1,32 @@
-# ── Etapa 1: Build ──────────────────────────────────────────
-FROM eclipse-temurin:17-jdk-alpine AS build
+# Multi-stage build para Spring Boot
+FROM maven:3.9-eclipse-temurin-17-alpine AS build
 
 WORKDIR /app
 
-COPY mvnw mvnw.cmd ./
+# Copiar solo los archivos necesarios para el build
+COPY pom.xml .
+COPY mvnw .
 COPY .mvn .mvn
-COPY pom.xml ./
+COPY src src
 
-RUN ./mvnw dependency:go-offline -q
+# Hacer el build
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
-COPY src ./src
-RUN ./mvnw package -DskipTests -q
-
-# ── Etapa 2: Runtime ─────────────────────────────────────────
+# Stage 2: Runtime
 FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar app.jar
+# Copiar el JAR del stage anterior
+COPY --from=build /app/target/cumple-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 10000
+# Exponer el puerto (Render lo asigna dinámicamente)
+EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-10000}"]
+# Variables de entorno por defecto
+ENV SPRING_PROFILES_ACTIVE=prod
+ENV JAVA_TOOL_OPTIONS="-Xmx512m -Xms256m"
+
+# Ejecutar la aplicación
+# Usar $PORT de Render si está disponible, sino 8080
+ENTRYPOINT ["sh", "-c", "java $JAVA_TOOL_OPTIONS -Dserver.port=${PORT:-8080} -jar app.jar"]
