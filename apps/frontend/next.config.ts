@@ -41,7 +41,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://open.spotify.com",
+      "connect-src 'self' https://open.spotify.com https://*.onrender.com",
       "frame-src 'self' https://open.spotify.com",
       "media-src 'self'",
       "object-src 'none'",
