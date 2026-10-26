@@ -1,0 +1,61 @@
+╔══════════════════════════════════════════════════════════════╗
+║          BÓVEDA DE RECUERDOS - CÓMO AGREGAR FOTOS          ║
+╚══════════════════════════════════════════════════════════════╝
+
+📸 PASO 1: Agregar tus fotos
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Copia tus fotos a esta carpeta
+   • Formatos: JPG, PNG, GIF, WEBP
+   • Nombres: foto1.jpg, foto2.jpg, etc.
+
+
+📝 PASO 2: Actualizar la lista en el código
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Abre el archivo:
+   apps/frontend/src/app/boveda/page.tsx
+   
+   Busca la línea:
+   const bovedaImages = [
+   
+   Y agrega tus imágenes:
+   const bovedaImages = [
+     'foto1.jpg',
+     'foto2.jpg',
+     'foto3.jpg',
+     // ... más fotos
+   ];
+
+
+✨ PASO 3: Ver tu galería
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Guarda los cambios
+   • Recarga la página en el navegador
+   • ¡Disfruta tus recuerdos! 💜
+
+
+💡 EJEMPLO COMPLETO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const bovedaImages = [
+  'vacaciones2024.jpg',
+  'cumpleaños.png',
+  'primer-beso.jpg',
+  'atardecer-playa.jpg',
+  'concierto.jpg',
+];
+
+
+🎨 CARACTERÍSTICAS DE LA GALERÍA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✓ Vista en cuadrícula responsive
+   ✓ Lightbox para ver en grande
+   ✓ Navegación con flechas ← →
+   ✓ Contador de imágenes
+   ✓ Animaciones suaves
+   ✓ Estilo melancólico
+   ✓ Hover effects elegantes
+
+
+¿NECESITAS AYUDA?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lee el archivo README.md en esta misma carpeta para más detalles.

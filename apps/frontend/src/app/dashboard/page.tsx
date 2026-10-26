@@ -42,6 +42,12 @@ const modules = [
     icon: '🩹',
     desc: 'Para esos momentos difíciles. Aquí siempre hay algo para ti.',
   },
+  {
+    name: 'Prohibido',
+    path: '/prohibido',
+    icon: '🚫',
+    desc: 'Zona restringida. Contenido exclusivo y privado.',
+  },
 ];
 
 const VISITED_KEY = 'visited_modules';
