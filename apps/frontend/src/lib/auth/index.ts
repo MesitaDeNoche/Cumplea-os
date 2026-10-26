@@ -1,8 +1,2 @@
-/**
- * Authentication Library Exports
- * 
- * Central export point for all authentication utilities and constants.
- */
-
-export * from './config';
-export * from './constants';
+export { createSession, getSession, clearSession, isAuthenticated } from './session';
+export { isRateLimited, recordFailedAttempt, resetRateLimit } from './rate-limiter';
