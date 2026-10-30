@@ -7,10 +7,11 @@ export async function GET() {
     const bovedaPath = path.join(process.cwd(), 'public', 'images', 'boveda');
     const files = fs.readdirSync(bovedaPath);
     
-    // Filtrar solo imágenes (excluir archivos .txt, .md, .zip, etc.)
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.heic', '.HEIC'];
+    // Filtrar solo imágenes soportadas por navegadores web
+    // HEIC no es soportado nativamente, se excluye
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG', '.GIF', '.WEBP'];
     const images = files.filter(file => {
-      const ext = path.extname(file).toLowerCase();
+      const ext = path.extname(file);
       return imageExtensions.includes(ext);
     });
 

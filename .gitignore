@@ -65,3 +65,17 @@ desktop.ini
 legacy/target/
 legacy/.mvn/wrapper/maven-wrapper.jar
 legacy/HELP.md
+
+# User uploaded images - DO NOT COMMIT
+apps/frontend/public/images/boveda/*.jpg
+apps/frontend/public/images/boveda/*.jpeg
+apps/frontend/public/images/boveda/*.png
+apps/frontend/public/images/boveda/*.gif
+apps/frontend/public/images/boveda/*.webp
+apps/frontend/public/images/boveda/*.HEIC
+apps/frontend/public/images/boveda/*.heic
+apps/frontend/public/images/boveda/*.zip
+
+# Keep only documentation files in boveda
+!apps/frontend/public/images/boveda/*.md
+!apps/frontend/public/images/boveda/*.txt

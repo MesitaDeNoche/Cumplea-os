@@ -171,6 +171,29 @@ export default function BovedaPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
                     priority={index < 6}
+                    onError={(e) => {
+                      // Si la imagen falla al cargar, mostrar un placeholder
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent && !parent.querySelector('.error-placeholder')) {
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'error-placeholder';
+                        placeholder.style.cssText = `
+                          position: absolute;
+                          inset: 0;
+                          display: flex;
+                          flex-direction: column;
+                          align-items: center;
+                          justify-content: center;
+                          background: rgba(0, 0, 0, 0.3);
+                          color: rgba(255, 255, 255, 0.5);
+                          font-size: 2rem;
+                        `;
+                        placeholder.innerHTML = '📷';
+                        parent.appendChild(placeholder);
+                      }
+                    }}
                   />
                 </div>
               ))}
