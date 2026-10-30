@@ -132,7 +132,7 @@ export default function LoginScreen() {
           </p>
         )}
 
-        <p className="login__hint">Pista: día y mes de tu cumpleaños (DDMM) 🎂</p>
+        <p className="login__hint">Pista: nuestro día y nuestro mes (DDMM) 💜</p>
       </div>
     </div>
   );
