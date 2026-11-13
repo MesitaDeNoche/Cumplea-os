@@ -16,19 +16,19 @@ const modules = [
     name: 'Bóveda de Recuerdos',
     path: '/boveda',
     icon: '📸',
-    desc: 'Un cofre de fotos y momentos que guardaremos para siempre.',
+    desc: 'Un cofre de fotos y momentos que guardaré para siempre.',
   },
   {
     name: 'Playlist Visual',
     path: '/playlist',
     icon: '🎵',
-    desc: 'Las canciones que nos definen, cada una con un mensaje especial.',
+    desc: 'Las canciones que más me recuerdan a ti, cada una con un mensaje especial.',
   },
   {
     name: 'Escape Room',
     path: '/escape-room',
     icon: '🔐',
-    desc: 'Un juego de preguntas sobre nosotros. ¿Podrás resolver todos?',
+    desc: 'Un juego de preguntas sobre nosotros, para recordarnos un poco. ¿Podrás resolver todos?',
   },
   {
     name: 'Dashboard de Ánimo',
@@ -88,7 +88,7 @@ export default function DashboardPage() {
         <div className="dashboard">
           <div className="dashboard__header">
             <p className="dashboard__welcome">Bienvenida a tu espacio</p>
-            <h1 className="dashboard__title">Mi Amor 💜</h1>
+            <h1 className="dashboard__title">Carolina 💜</h1>
             <p className="dashboard__subtitle">Todo esto fue hecho pensando en ti</p>
           </div>
 

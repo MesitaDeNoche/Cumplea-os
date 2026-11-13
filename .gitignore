@@ -79,3 +79,9 @@ apps/frontend/public/images/boveda/*.zip
 # Keep only documentation files in boveda
 !apps/frontend/public/images/boveda/*.md
 !apps/frontend/public/images/boveda/*.txt
+
+# Executables and large binaries
+*.exe
+*.dmg
+*.pkg
+*.msi
